@@ -9,6 +9,11 @@ const USER_ID = 'mayankmanitripathi_01122004';
 const EMAIL = 'mayankmanitripathi04@gmail.com';
 const ROLL_NUMBER = '22BET10076';
 
+// Default route to prevent "Cannot GET /" error
+app.get('/', (req, res) => {
+  res.status(200).send('Server is running. Use /bfhl endpoint.');
+});
+
 app.post('/bfhl', (req, res) => {
   try {
     const data = req.body.data;
